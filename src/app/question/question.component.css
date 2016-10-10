@@ -1,0 +1,9 @@
+.questionContainer{
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 2%;
+}
+
+div > button {
+  margin: 2%;
+}

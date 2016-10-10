@@ -1,12 +1,27 @@
-<div *ngIf="index != -1">
-    <h2>Question {{questionSet[index].sNum}}</h2>
+<div *ngIf="index != -1" class="questionContainer">
+  <md-card>
+    <md-card-title>
+
+      <div id="questionNumber">Question
+        <button md-mini-fab disabled>{{questionSet[index].sNum}}
+        </button>
+      </div>
+    </md-card-title>
     <p>{{questionSet[index].text}}</p>
-    <div><button *ngFor="let option of questionSet[index].options" (click)="nextQuestion(option)">{{option}}</button>
-    </div>
+    <md-card-actions>
+      <div>
+        <button md-raised-button *ngFor="let option of questionSet[index].options" (click)="nextQuestion(option)">
+          {{option}}
+        </button>
+      </div>
+    </md-card-actions>
+  </md-card>
 </div>
-<!--<div id="today">{{today}}</div>-->
-<!--<chart [correct]="correctAnswers"></chart>-->
-<div *ngIf="index == -1">
-    <h2>Thank you for answering!!!</h2>
-    <chart #chartTag [correct]="correctAnswers"></chart>
+
+<div *ngIf="index == -1" class="questionContainer">
+  <md-card><md-card-title>
+  Thank you!!
+    </md-card-title>
+  <chart #chartTag [correct]="correctAnswers"></chart>
+  </md-card>
 </div>

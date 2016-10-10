@@ -7,6 +7,7 @@ import { routing,
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question/question.component';
 import { ChartComponent } from './chart/chart.component';
+import {MaterialModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { ChartComponent } from './chart/chart.component';
   imports: [
     BrowserModule,routing,
     FormsModule,
-    HttpModule
+    HttpModule, MaterialModule.forRoot()
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
