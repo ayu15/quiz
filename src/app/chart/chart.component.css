@@ -1,0 +1,12 @@
+.hideMe {
+    display: none;
+}
+
+.showMe{
+    display: block;
+}
+
+#myChart {
+    height: auto;
+    width: 30%;
+}

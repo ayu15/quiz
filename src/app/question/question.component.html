@@ -1,0 +1,12 @@
+<div *ngIf="index != -1">
+    <h2>Question {{questionSet[index].sNum}}</h2>
+    <p>{{questionSet[index].text}}</p>
+    <div><button *ngFor="let option of questionSet[index].options" (click)="nextQuestion(option)">{{option}}</button>
+    </div>
+</div>
+<!--<div id="today">{{today}}</div>-->
+<!--<chart [correct]="correctAnswers"></chart>-->
+<div *ngIf="index == -1">
+    <h2>Thank you for answering!!</h2>
+    <chart #chartTag [correct]="correctAnswers"></chart>
+</div>
