@@ -4,6 +4,7 @@
 
 import {Component} from '@angular/core';
 import * as moment from 'moment/moment';
+import {ReportComponent} from "../report/report.component";
 
 @Component({
     selector: 'question',
@@ -11,6 +12,9 @@ import * as moment from 'moment/moment';
     styleUrls: ["./question.component.css"]
 })
 export class QuestionComponent {
+  // constructor(private reportComponent:ReportComponent){
+  //
+  // }
 
     public index:number=0;
     private correctAnswers =0;
@@ -21,10 +25,13 @@ export class QuestionComponent {
         {sNum:5, text:"Michael jordan is famous for which sport", options:["Cricket", "BasketBall", "Football", "other"], answer: "BasketBall"}
     ];
 
+  private userAnswers:any = [];
+
     private nextQuestion(userAnswer:string){
         this.checkAnswer(userAnswer, this.index);
+        this.userAnswers.push(userAnswer);
         if(this.index < this.questionSet.length -1){
-            ++this.index;
+          ++this.index;
         }
         else{
             this.index = -1;
@@ -38,5 +45,9 @@ export class QuestionComponent {
     }
 
     private today: string = moment().format('D MMM YYYY');
+
+  private showReport(){
+    this.index = -2
+  }
 
 }

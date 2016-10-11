@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { QuestionComponent } from './question/question.component';
 import { ChartComponent } from './chart/chart.component';
 import {MaterialModule} from "@angular/material";
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionComponent,
-    ChartComponent
+    ChartComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,routing,

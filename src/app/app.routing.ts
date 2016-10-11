@@ -6,10 +6,11 @@ import { Routes, RouterModule } from '@angular/router';
 import {ChartComponent} from "./chart/chart.component";
 import {QuestionComponent} from "./question/question.component";
 import {AppComponent} from "./app.component";
+import {ReportComponent} from "./report/report.component";
 //import {Ng2ChartComponent} from "./ng2-chart/ng2-chart.component";
 
 const appRoutes: Routes = [
-    { path: 'result', component:ChartComponent  },
+    { path: 'report', component:ReportComponent  },
     { path: '', component: QuestionComponent }
 ];
 

@@ -7,3 +7,17 @@
 div > button {
   margin: 2%;
 }
+
+#reportLink{
+  float: right;
+  margin-right: 10%;
+  margin-top:10%;
+}
+
+.questionCard{
+  margin-bottom:2%;
+}
+
+.questionSpan{
+  font-size: x-large;
+}

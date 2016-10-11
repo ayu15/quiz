@@ -1,9 +1,7 @@
-<div *ngIf="index != -1" class="questionContainer">
+<div *ngIf="index != -1 && index != -2" class="questionContainer">
   <md-card>
     <md-card-title>
-
-      <div id="questionNumber">Question
-        <button md-mini-fab disabled>{{questionSet[index].sNum}}
+      <div id="questionNumber"><span class="questionSpan">Question</span><button md-mini-fab disabled>{{questionSet[index].sNum}}
         </button>
       </div>
     </md-card-title>
@@ -22,6 +20,30 @@
   <md-card><md-card-title>
   Thank you!!
     </md-card-title>
+    <button id="reportLink" (click)="showReport()">Click to see report</button>
   <chart #chartTag [correct]="correctAnswers"></chart>
+  </md-card>
+</div>
+
+<div *ngIf="index == -2" class="questionContainer">
+  <md-card-title>Report Card</md-card-title>
+  <md-card class="questionCard" *ngFor="let question of questionSet; let i = index">
+    <md-card-content>
+      <div ><span class="questionSpan">Question</span><button md-mini-fab disabled>{{questionSet[i].sNum}}
+        </button>
+        <p>{{questionSet[i].text}}</p>
+        <div>
+        <button md-raised-button *ngFor="let option of questionSet[i].options;">
+        {{option}}
+        </button>
+        </div>
+        <div>
+          Your answer: {{userAnswers[i]}}
+        </div>
+        <div>
+          Correct answer: {{questionSet[i].answer}}
+        </div>
+      </div>
+    </md-card-content>
   </md-card>
 </div>
