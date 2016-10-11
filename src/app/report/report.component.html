@@ -1,0 +1,25 @@
+<div>
+  <md-card>
+    <md-card-title>Report Card</md-card-title>
+    hey
+    <md-card-content>
+      <div *ngFor="let question of questionSet; let i = index">Question {{i}}
+        <button md-mini-fab disabled>{{questionSet[i].sNum}}
+        </button>
+
+      <p>{{questionSet[i].text}}</p>
+      <!--<div>-->
+        <!--<button md-raised-button *ngFor="let option of questionSet[i].options;">-->
+          <!--{{option}}-->
+        <!--</button>-->
+      <!--</div>-->
+      <div>
+        Your answer:
+      </div>
+      <div>
+        Correct answer:
+      </div>
+      </div>
+    </md-card-content>
+  </md-card>
+</div>
